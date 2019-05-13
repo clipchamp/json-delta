@@ -2,14 +2,20 @@
   "name": "@clipchamp/json-delta",
   "version": "1.0.2",
   "description": "Json object diff / patching with configurable short-circuit tolerance. Forked from: github.com/corps",
-  "keywords": ["json", "diff", "delta", "patching", "fast"],
+  "keywords": [
+    "json",
+    "diff",
+    "delta",
+    "patching",
+    "fast"
+  ],
   "homepage": "https://github.com/clipchamp/json-delta#readme",
   "bugs": {
     "url": "https://github.com/clipchamp/json-delta/issues"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/clipchamp/json-delta.git"
+    "type": "git",
+    "url": "https://github.com/clipchamp/json-delta.git"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,6 +33,7 @@
     "karma": "^1.7.1",
     "karma-qunit": "^1.2.1",
     "karma-webpack": "^2.0.6",
+    "prettier": "1.17.0",
     "quick_check": "^0.7.0",
     "qunitjs": "^2.4.1",
     "release-it": "^12.0.1",
