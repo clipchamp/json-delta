@@ -9,7 +9,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "yarn build",
+    "release": "release-it"
   },
   "devDependencies": {
     "karma": "^1.7.1",
@@ -17,8 +19,9 @@
     "karma-webpack": "^2.0.6",
     "quick_check": "^0.7.0",
     "qunitjs": "^2.4.1",
+    "release-it": "^12.0.1",
+    "ts-loader": "^3.1.1",
     "typescript": "2.5.3",
-    "webpack": "^3.8.1",
-    "ts-loader": "^3.1.1"
+    "webpack": "^3.8.1"
   }
 }

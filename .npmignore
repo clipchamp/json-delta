@@ -1,4 +1,5 @@
 karma.conf.*
 tests.*
 default.nix
-src
+/src
+tsconfig.json
