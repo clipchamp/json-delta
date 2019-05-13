@@ -2,4 +2,5 @@ karma.conf.*
 tests.*
 default.nix
 /src
+/.idea
 tsconfig.json
