@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Json object diff / patching with configurable short-circuit tolerance. Forked from: github.com/corps",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "contributors": [
     "Zach Collins <recursive.cookie.jar@gmail.com>",
     "Byron Mejia <byron@clipchamp.com"
