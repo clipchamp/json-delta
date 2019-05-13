@@ -9,8 +9,8 @@ import {
   ObjPath,
   applyDiff,
   diff,
-  isArr,
-  isObj,
+  isArray,
+  isObject,
 } from "./index.js";
 
 interface ArrGenOpts {
@@ -161,12 +161,12 @@ function checkLcs(a: any[], b: any[], tolerance?: number) {
 function allObjPaths(o: any, curPath: ObjPath = [], result: ObjPath[] = []) {
   result.push(curPath);
 
-  if (isObj(o)) {
+  if (isObject(o)) {
     for (let k in o) {
       let nextPath = curPath.concat([k]);
       allObjPaths(o[k], nextPath, result);
     }
-  } else if (isArr(o)) {
+  } else if (isArray(o)) {
     for (let i = 0; i < o.length; ++i) {
       let nextPath = curPath.concat([i]);
       allObjPaths(o[i], nextPath, result);
@@ -210,8 +210,8 @@ function mutationsOf(
     };
 
     while (
-      ((isArr(unchangedOfO) && unchangedOfO.length) ||
-        (isObj(unchangedOfO) && Object.keys(unchangedOfO).length)) &&
+      ((isArray(unchangedOfO) && unchangedOfO.length) ||
+        (isObject(unchangedOfO) && Object.keys(unchangedOfO).length)) &&
       remainingMutations > 0
     ) {
       let allUnChangedPaths = allObjPaths(unchangedOfO);
@@ -232,7 +232,7 @@ function mutationsOf(
           }
 
         case "r":
-          if (path.length > 0 && container && isObj(container)) {
+          if (path.length > 0 && container && isObject(container)) {
             unchangedOfO = applyDiff(unchangedOfO, [path]);
             let newValue = exceptDeepEqualTo(vGen, getVal(o, path))(s);
             diff.push([path, newValue]);
@@ -245,11 +245,11 @@ function mutationsOf(
           if (container) {
             let key: number | string;
 
-            if (isObj(container)) {
+            if (isObject(container)) {
               key = qc.except(qc.string, ...Object.keys(container))(s);
             }
 
-            if (isArr(container)) {
+            if (isArray(container)) {
               key = Math.floor(Math.random() * container.length);
             }
 
