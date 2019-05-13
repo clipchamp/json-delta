@@ -2,12 +2,15 @@
   "name": "@clipchamp/json-delta",
   "version": "1.0.0",
   "description": "Json object diff / patching with configurable short-circuit tolerance. Forked from: github.com/corps",
-  "main": "index.js",
+  "main": "dist/index.js",
   "contributors": [
     "Zach Collins <recursive.cookie.jar@gmail.com>",
     "Byron Mejia <byron@clipchamp.com"
   ],
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "karma": "^1.7.1",
     "karma-qunit": "^1.2.1",

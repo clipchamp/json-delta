@@ -5,7 +5,9 @@
     "moduleResolution": "node",
     "target": "es6",
     "sourceMap": false,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "outDir": "dist"
   },
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
