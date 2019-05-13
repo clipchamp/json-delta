@@ -32,7 +32,7 @@ more than tolerance (number) of changes are found.
 not changed in the patching.  It uses shallow copying on any container that changes.
 
 
-```
+```javascript
 var jd = require("json-delta");
 var diff = jd.diff([1, 2, 3], [1, 2, 3, 4]);
 console.log(jd.applyDiff([1, 2, 3], diff));
@@ -43,3 +43,42 @@ console.log(jd.applyDiff([1, 2, 3], diff));
 ```
 npm i @clipchamp/json-delta
 ```
+
+## Using `json-delta`
+
+`json-delta` supplies two pretty main/important functions, at least for clipchamp.
+
+### `diff<T>`
+
+`diff<T>` takes two objects, and will return to you a `Diff<T>`. This diff
+object can only be applied to the type of object (supplied by `T`). For example:
+
+```typescript
+const coordinates1: Coordinates = {
+    x: 1,
+    y: 0
+};
+const coordinates2: Coordinates = {
+    x: 1,
+    y: 1
+};
+// This will result in the type of Diff<Coordinates>
+const diffBetweenCoordinates = diff(coordinates1, coordinates2);
+```
+
+The resulting diff will be something like:
+```typescript
+const someDiff = {
+    y: 0 => 1
+}
+```
+
+### `applyDiff<T>`
+
+`applyDiff<T>` will allow you to apply a diff you previous collected, back onto
+the object (that follows the same generic typing of `T`).
+
+```typescript
+const coordinates1As2 = applyDiff(coordiantes1, diffBetweenCoordinates);
+```
+
