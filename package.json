@@ -2,6 +2,15 @@
   "name": "@clipchamp/json-delta",
   "version": "1.0.2",
   "description": "Json object diff / patching with configurable short-circuit tolerance. Forked from: github.com/corps",
+  "keywords": ["json", "diff", "delta", "patching", "fast"],
+  "homepage": "https://github.com/clipchamp/json-delta#readme",
+  "bugs": {
+    "url": "https://github.com/clipchamp/json-delta/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/clipchamp/json-delta.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "contributors": [
