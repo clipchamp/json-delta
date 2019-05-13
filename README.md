@@ -1,5 +1,14 @@
 # json-delta
 
+_Forked from [corps/json-delta](https://github.com/corps/json-delta)_
+
+## Why a fork?
+
+This for provides typings in the npm package. This fork will also be used to try and become
+more active for projects.
+
+## About `json-delta`
+
 json-delta is an efficient, JSON oriented javascript object delta calculator and applier.
 It provides a configurable threshold (tolerance) after which the diff calculator will short circuit
 a more complex delta analysis, useful for calculating deltas on very large objects that may from
