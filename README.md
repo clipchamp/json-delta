@@ -41,5 +41,5 @@ console.log(jd.applyDiff([1, 2, 3], diff));
 ## Installation
 
 ```
-npm install json-delta --save
+npm i @clipchamp/json-delta
 ```
