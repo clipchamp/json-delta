@@ -2,8 +2,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "noImplicitAny": true,
+    "declaration": true,
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "es2015",
     "sourceMap": false,
     "noUnusedLocals": true,
     "outDir": "dist"

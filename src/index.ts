@@ -1,8 +1,8 @@
 export type AnyJson = boolean | number | string | null | JsonArray | JsonMap;
-interface JsonMap {
+export interface JsonMap {
   [key: string]: AnyJson;
 }
-interface JsonArray extends Array<AnyJson> {}
+export interface JsonArray extends Array<AnyJson> {}
 
 export type ObjPath = (string | number)[];
 export type DiffInsert = [ObjPath, any];
@@ -145,7 +145,7 @@ export function diff(
   a: AnyJson,
   b: AnyJson,
   tolerance = Infinity
-): Diff | void {
+): Diff | null {
   let result: Diff = [];
   if (gatherDiff(a, b, tolerance, [], result) || result.length > tolerance)
     return [[[], b]];
@@ -297,7 +297,7 @@ function arrDiff(
   let aOfDiagonal = new Uint32Array(tolerance * 2 + 2);
   let aOfDiagonalForEditSize = new Array(tolerance + 1);
 
-  let shortestEdit: [number, number] | void = (function() {
+  let shortestEdit: [number, number] | null = (function() {
     for (var d = 0; d <= tolerance; ++d) {
       for (var k = -d; k <= d; k += 2) {
         let aIdx: number;
